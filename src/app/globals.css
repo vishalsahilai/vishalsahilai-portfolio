@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── DARK THEME (default) ── */
+:root {
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #1a1a1a;
+  --border: rgba(57,255,20,0.15);
+  --text: #ffffff;
+  --subtext: #9ca3af;
+  --neon: #39FF14;
+  --neon-dim: rgba(57,255,20,0.7);
+}
+
+/* ── LIGHT THEME ── */
+html.light body {
+  color: #0a0a0a;
+}
+html.light h1,
+html.light h2,
+html.light h3,
+html.light p,
+html.light span,
+html.light li,
+html.light button {
+  color: inherit;
+}
+html.light {
+  --bg: #ffffff;
+  --bg2: #f5f5f5;
+  --bg3: #ebebeb;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Neon accent text */
+.neon-text { color: var(--neon); }
+
+/* Neon glow text (hero only) */
+.neon-glow {
+  color: var(--neon);
+  text-shadow: 0 0 8px rgba(57,255,20,0.6);
+}
+
+/* Outline button */
+.btn-outline {
+  border: 1.5px solid var(--neon);
+  color: var(--neon);
+  background: transparent;
+  transition: all 0.25s;
+}
+.btn-outline:hover {
+  background: var(--neon);
+  color: #0a0a0a;
+  box-shadow: 0 0 20px var(--neon);
+}
+
+/* Solid button */
+.btn-solid {
+  background: var(--neon);
+  color: #0a0a0a;
+  font-weight: 700;
+  transition: all 0.25s;
+}
+.btn-solid:hover {
+  box-shadow: 0 0 25px var(--neon);
+  transform: translateY(-2px);
+}
+
+/* Card */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 20px rgba(57,255,20,0.08);
+}
+
+/* Section */
+section { padding: 96px 0; }
+
+/* Tag pill */
+.tag {
+  background: rgba(57,255,20,0.08);
+  border: 1px solid var(--border);
+  color: var(--neon);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--neon); border-radius: 10px; }
+
+/* Skill bar */
+.skill-bar {
+  height: 4px;
+  background: var(--bg3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--neon), #00ff88);
+  box-shadow: 0 0 8px var(--neon);
+}
+
+/* ── LIGHT THEME TEXT FIXES ── */
+html.light .neon-glow {
+  color: var(--neon);
+  text-shadow: none;
+}
+html.light .card {
+  background: #ffffff;
+  border-color: rgba(20,160,5,0.2);
+}
+html.light .tag {
+  background: rgba(20,160,5,0.08);
+  border-color: rgba(20,160,5,0.3);
+  color: #14a005;
+}
+html.light .btn-outline {
+  border-color: #14a005;
+  color: #14a005;
+}
+html.light .btn-outline:hover {
+  background: #14a005;
+  color: #ffffff;
+}
+html.light .btn-solid {
+  background: #14a005;
+  color: #ffffff;
+}
+html.light nav {
+  background: rgba(245,245,245,0.95) !important;
+}
+
+html.light body {
+  background-color: #ffffff !important;
+}
+
+html.light section {
+  background-color: transparent;
+}
+
+/* ── NAVBAR AI text color fix ── */
+html.light nav span[style*="color:'var(--subtext)'"] {
+  color: #555555 !important;
+}
+
+/* ── Fix ALL text in light mode ── */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light p,
+html.light span,
+html.light li,
+html.light label,
+html.light a {
+  color: #0a0a0a;
+}
+
+/* Keep neon elements neon in light mode */
+html.light .neon-text,
+html.light .neon-glow {
+  color: #14a005 !important;
+  text-shadow: none !important;
+}
+
+html.light .tag {
+  color: #14a005 !important;
+}
+
+/* Fix card text */
+html.light .card p,
+html.light .card h3,
+html.light .card span {
+  color: #0a0a0a !important;
+}
+
+/* Fix form inputs text */
+html.light input,
+html.light textarea {
+  color: #0a0a0a !important;
+  background: #f0f0f0 !important;
+  border-color: rgba(20,160,5,0.3) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #888888 !important;
+}
+
+/* Fix btn-outline hover visibility */
+html.light .btn-outline {
+  color: #14a005 !important;
+  border-color: #14a005 !important;
+}
+html.light .btn-outline:hover {
+  background: #14a005 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(20,160,5,0.4) !important;
+}
+
+/* Fix btn-solid */
+html.light .btn-solid {
+  background: #14a005 !important;
+  color: #ffffff !important;
+}
+
+/* Fix social cards text */
+html.light .card {
+  background: #ffffff !important;
+  border-color: rgba(20,160,5,0.2) !important;
+}
+
+/* Subtext in light mode */
+html.light [style*="var(--subtext)"] {
+  color: #555555 !important;
+}
+
+html.light [style*="var(--text)"] {
+  color: #0a0a0a !important;
+}
+
+/* ── RESPONSIVE FIXES ── */
+
+/* Navbar */
+@media (max-width: 768px) {
+  nav .hidden { display: none !important; }
+}
+
+/* Hero */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    padding-top: 100px !important;
+  }
+  .hero-grid > div:first-child { order: 2 !important; }
+  .hero-grid > div:last-child { order: 1 !important; margin-bottom: 80px !important; }
+}
+
+/* About */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Skills */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Projects */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Contact form */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Socials */
+@media (max-width: 768px) {
+  .socials-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* General section padding on mobile */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0 !important;
+  }
+}
+
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr!important;text-align:center;}
+  .hero-grid>div:first-child{order:1;}
+  .hero-grid>div:last-child{order:2;margin-top:40px;}
+}
+
+/* Nav link underline animation */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--neon);
+  box-shadow: 0 0 8px var(--neon);
+  transition: width 0.3s ease;
+}
+.nav-link:hover {
+  color: var(--neon) !important;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile menu link hover */
+.mobile-nav-link:hover {
+  color: var(--neon) !important;
+  padding-left: 8px !important;
+  transition: all 0.2s;
+}
+
+.mobile-nav-link:hover {
+  color: var(--neon) !important;
+  padding-left: 12px !important;
+  background: rgba(57, 255, 20, 0.08) !important;
+  border-radius: 6px;
+}
+
+html.light .card svg { filter: brightness(0.7); }
+
+@media(max-width:768px){
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .card {
+    padding: 16px !important;
+  }
+
+  h1, h2, h3, p {
+    word-break: break-word;
+  }
+}
