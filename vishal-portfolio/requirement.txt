@@ -1,0 +1,8 @@
+Next.js 14.2.3
+React 18
+React DOM 18
+Framer Motion 11
+React Icons 5
+Tailwindcss 3.4
+Autoprefixer 10
+Postcss 8
