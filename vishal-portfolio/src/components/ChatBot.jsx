@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { MdSmartToy, MdClose, MdSend } from 'react-icons/md';
 import { FaWhatsapp } from 'react-icons/fa';
 
-const API_BASE = "https://portfolio-chatbot-production-fc66.up.railway.app;
+const API_BASE = "https://portfolio-chatbot-ajvd.onrender.com";
 
 function getSessionId() {
   let sid = localStorage.getItem("portfolio_sid");
